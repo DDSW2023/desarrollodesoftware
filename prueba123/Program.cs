@@ -11,8 +11,26 @@ namespace prueba123
     {
         static void Main(string[] args)
         {
-            var Persona = new Persona();
-            Persona.Nombre = "Juan";
+
+            using (var context = new AgendaContext())
+            {
+                var Persona = new Persona 
+                { 
+                    Nombre = "Santiago", 
+                    Apellido = "Ciaponi", 
+                    Telefonos = { 
+                        new Telefono { numero = "3329477465", Tipo = "celular" },
+                        new Telefono { numero = "3329480772", Tipo = "fijo" }
+                    }
+                };
+
+                context.Personas.Add(Persona);  
+                context.SaveChanges();
+
+
+
+            }
+
 
         }
     }

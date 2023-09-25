@@ -11,22 +11,25 @@ namespace prueba123
         private int _id;
         private string? _nombre;
         private string? _apellido;
+
         public int Id
         {
             get { return _id; }
             set { _id = value; }
         }
-        public String Nombre
+
+        public string Nombre
         {
             get { return _nombre; }
             set { _nombre = value; }
         }
-        public String Apellido
+
+        public string Apellido
         {
             get { return _apellido; }
             set { _apellido = value; }
         }
 
-        public ICollection<Telefono>? Telefonos { get; set; }
+        public ICollection<Telefono> Telefonos { get; set; } = new List<Telefono>(); // Inicializa la colección en el constructor
     }
 }
